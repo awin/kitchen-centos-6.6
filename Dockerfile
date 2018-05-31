@@ -1,6 +1,7 @@
 FROM centos:6.6
-RUN rpm --rebuilddb && yum clean all
 RUN yum update -y
+RUN yum install -y yum-plugin-ovl
+RUN rpm --rebuilddb && yum clean all
 RUN yum install -y net-tools
 RUN yum install -y curl sudo openssh-server cron vim netcat-traditional
 
